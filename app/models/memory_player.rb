@@ -1,0 +1,2 @@
+class MemoryPlayer < ApplicationRecord
+end
