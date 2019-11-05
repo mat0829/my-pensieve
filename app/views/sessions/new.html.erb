@@ -1,0 +1,12 @@
+<h1>Please Sign In below:</h1><br>
+
+<%= form_for @user, :url => url_for(:controller => 'sessions', :action => 'create') do |f| %>
+  
+    <%= f.text_field :username, placeholder: 'Username:' %><br><br>
+  
+    <%= f.password_field :password, placeholder: 'Password:' %>
+  
+    <%= f.submit "Sign In" %>
+<% end %><br>
+
+<%= link_to "Create a New User", new_user_path %>
