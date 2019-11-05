@@ -1,1 +1,18 @@
-<h1> I am the Home Page! :D </h1>
+<nav>
+  <% if logged_in? %>
+    <h1>Welcome, <%=current_user.username.capitalize %>!</h1><br>
+    <a href="/memories/new"> Add Memory </a> |
+    <a href="/memories"> Memories Page </a> |
+    <a href="/emotions"> Emotions Page </a> |
+    <a href="/players"> People/Pets Page </a> |
+    <a href="/logout"> Log Out </a>
+    
+
+  <% else %>
+    <h1>Please Sign In or Sign Up below:</h1><br>
+    <a href="/signup">Sign Up</a> |
+    <%= link_to 'Sign Up', signup_path %>
+    <%= link_to 'Sign In', signin_path %>
+  <%end %>
+
+</nav>

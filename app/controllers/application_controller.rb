@@ -16,5 +16,5 @@ class ApplicationController < ActionController::Base
     redirect to root_path unless logged_in?
   end
 
-  helper_method :current_user
+  helper_method :current_user, :logged_in?
 end
