@@ -1,0 +1,6 @@
+<ul>
+  <h1>"<%= @memory.title.capitalize %>"</h1><br>
+  <p><%= @memory.content.capitalize %></p>
+</ul>
+
+<%= link_to "Edit Memory", edit_memory_path(@memory.id) %>

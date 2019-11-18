@@ -1,4 +1,5 @@
 class MemoriesController < ApplicationController
+  before_action :set_memory, only: [:show, :edit, :update, :destroy]
 
   def index
     @memories = current_user.memories
@@ -15,8 +16,13 @@ class MemoriesController < ApplicationController
     render "new"
   end
 
+  def edit
+    @emotions = current_user.emotions
+    @players = current_user.players
+  end
+
   def create
-    @memory = current_user.memories.build(title: params[:title], content: params[:content])
+    @memory = current_user.memories.build(memory_params)
       @memory.emotion_ids = params[:emotions]
       @memory.player_ids = params[:players]
       if !params["emotion"]["name"].empty?
@@ -32,9 +38,19 @@ class MemoriesController < ApplicationController
       end
   end
 
-  
+  def update
+    if @memory.update(memory_params)
+      redirect_to @memory
+    else
+      render 'edit'
+    end
+  end
 
   private
+
+  def set_memory
+    @memory = Memory.find(params[:id])
+  end
 
   def memory_params
     params.require(:memory).permit(
