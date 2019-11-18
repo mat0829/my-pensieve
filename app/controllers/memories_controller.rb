@@ -1,5 +1,5 @@
 class MemoriesController < ApplicationController
-  before_action :set_memory, only: [:show, :edit, :update, :destroy]
+  before_action :set_memory, only: [:show, :edit, :update, :delete, :destroy]
 
   def index
     @memories = current_user.memories
@@ -44,6 +44,12 @@ class MemoriesController < ApplicationController
     else
       render 'edit'
     end
+  end
+
+  def destroy
+    @memory.destroy
+
+    redirect_to memories_url
   end
 
   private

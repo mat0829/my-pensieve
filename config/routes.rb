@@ -9,4 +9,5 @@ Rails.application.routes.draw do
   get "/login", to: "sessions#new"
   post "/sessions/create", to: "sessions#create"
   post "/memories/new", to: "memories#new"
+  delete '/memories/:id', to: 'memories#destroy'
 end
