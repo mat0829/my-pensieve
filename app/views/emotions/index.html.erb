@@ -2,3 +2,7 @@
 <% @emotions.each do |emotion| %>
   <h3>"<%= emotion.name.capitalize %>" <a href="/emotions/<%= emotion.id %>">View Memories</a></h3><br>
 <% end %>
+
+<%= link_to "Memories Page", memories_path %><br><br>
+
+<%= link_to "Home Page", root_path %><br><br>
