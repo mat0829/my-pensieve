@@ -55,7 +55,9 @@ class MemoriesController < ApplicationController
       :title,
       :content,
       emotion_ids:[],
-      emotions_attributes: [:name]
+      emotions_attributes: [:name],
+      player_ids:[],
+      players_attributes: [:name]
     )
   end
 end
