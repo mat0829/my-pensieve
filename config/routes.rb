@@ -8,5 +8,6 @@ Rails.application.routes.draw do
   root "static#home"
   get "/login", to: "sessions#new"
   post "/sessions/create", to: "sessions#create"
+  get "/logout", to: "sessions#destroy"
   post "/memories/new", to: "memories#new"
 end
