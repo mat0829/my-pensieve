@@ -1,0 +1,12 @@
+<h1><%= @player.name.split.map(&:capitalize).join(' ') %> Memories:</h1><br>
+  <% @player.memories.each do |memory| %>
+    <li><a href="/memories/<%= memory.id %>"><%= memory.title.capitalize %></a></li><br>
+  <% end %>
+
+<%= link_to "Edit Player", edit_player_path(@player.id) %><br><br>
+  
+<%= link_to "Players Page", players_path %><br><br>
+
+<%= link_to "Home Page", root_path %><br><br>
+
+<%= button_to "Delete Player", player_path(@player), method: :delete, data: { confirm: "Are you sure?" } %>

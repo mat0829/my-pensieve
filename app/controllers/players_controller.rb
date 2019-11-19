@@ -20,8 +20,17 @@ class PlayersController < ApplicationController
   end
 
   def update
-    @player.update(player_params)
-    redirect_to @player
+    if @player.update(player_params)
+      redirect_to @player
+    else
+      render 'edit'
+    end
+  end
+
+  def destroy
+    @player.destroy
+
+    redirect_to players_url
   end
 
   private

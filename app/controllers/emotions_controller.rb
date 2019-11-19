@@ -20,8 +20,17 @@ class EmotionsController < ApplicationController
   end
 
   def update
-    @emotion.update(emotion_params)
-    redirect_to @emotion
+    if @emotion.update(emotion_params)
+      redirect_to @emotion
+    else
+      render 'edit'
+    end
+  end
+
+  def destroy
+    @emotion.destroy
+
+    redirect_to emotions_url
   end
 
   private

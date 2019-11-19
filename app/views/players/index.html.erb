@@ -1,0 +1,4 @@
+<h1>Memory Players:</h1>
+<% @players.each do |player| %>
+  <h3>"<%= player.name.capitalize %>" <a href="/players/<%= player.id %>">View Memories</a></h3><br>
+<% end %>
