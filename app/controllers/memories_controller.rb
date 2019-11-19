@@ -23,11 +23,11 @@ class MemoriesController < ApplicationController
 
   def create
     @memory = current_user.memories.build(memory_params)
-      if @memory.save
-        redirect_to @memory
-      else
-        redirect to "/memories/new"
-      end
+    if @memory.save
+      redirect_to @memory
+    else
+      redirect to "/memories/new"
+    end
   end
 
   def update
