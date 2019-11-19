@@ -13,7 +13,11 @@
       <h4>Create a New Emotion: <input type="text" id="new_emotion" name="emotion[name]"></h4><br>
     <% else %>
       <h2><%= current_user.username.capitalize %>, add your first Emotion below:</h2>
-      <h4>Create a New Emotion <input type="text" id="new_emotion" name="emotion[name]"></h4><br>
+      
+      <%= f.fields_for :emotions, @memory.emotions.build do |emotion_fields| %>
+        <%= emotion_fields.label :name %> <%= emotion_fields.text_field :name %>
+      <% end %>
+
     <% end %>
 
     <% if !@players.empty? %>

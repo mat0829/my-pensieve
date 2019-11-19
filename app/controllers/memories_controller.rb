@@ -23,14 +23,6 @@ class MemoriesController < ApplicationController
 
   def create
     @memory = current_user.memories.build(memory_params)
-      @memory.emotion_ids = params[:emotions]
-      @memory.player_ids = params[:players]
-      if !params["emotion"]["name"].empty?
-        @memory.emotions << Emotion.find_or_create_by(name: params["emotion"]["name"].capitalize)
-      end
-      if !params["player"]["name"].empty?
-        @memory.players << Player.find_or_create_by(name: params["player"]["name"].capitalize)
-      end
       if @memory.save
         redirect_to @memory
       else
@@ -61,7 +53,9 @@ class MemoriesController < ApplicationController
   def memory_params
     params.require(:memory).permit(
       :title,
-      :content
+      :content,
+      emotion_ids:[],
+      emotions_attributes: [:name]
     )
   end
 end
