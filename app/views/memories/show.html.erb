@@ -3,6 +3,11 @@
   <p><%= @memory.content.capitalize %></p>
 </ul>
 
+<h3>Emotions:</h3><br>
+<% @memory.emotions.each do |emotion| %>
+  <li><a href="/emotions/<%= emotion.id %>"><%= emotion.name.capitalize %></a></li><br>
+<% end %>
+
 <%= link_to "Edit Memory", edit_memory_path(@memory.id) %><br><br>
 
 <%= link_to "Memories Page", memories_path %><br><br>
