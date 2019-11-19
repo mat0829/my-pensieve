@@ -6,13 +6,14 @@
     <%= f.text_area :content, cols: "38", rows: "10", placeholder: "Enter Content here: "%><br><br>
 
     <% if !@emotions.empty? %>
+
       <label><h3>Choose an Emotion(s):</h3></label>
-      <% @emotions.each do |emotion| %>
-        <li><input type="checkbox" name="emotions[]" id="<%= emotion.name %>" value="<%= emotion.id %>"> <%= emotion.name.capitalize %></input  ></li>
-      <% end %><br>
+      <%= f.collection_check_boxes :emotion_ids, @emotions.all, :id, :emotion_name_capitalized %><br>
+
       <%= f.fields_for :emotions, @memory.emotions.build do |emotion_fields| %>
         <h4><%= emotion_fields.label :name, "Create a New Emotion:" %> <%= emotion_fields.text_field :name %></h4>
-      <% end %></h4><br>
+      <% end %><br>
+
     <% else %>
       <h2><%= current_user.username.capitalize %>, add your first Emotion below:</h2>
       
@@ -23,14 +24,14 @@
     <% end %>
 
     <% if !@players.empty? %>
+
       <label><h3>Choose a Person/Pet(s):</h3></label>
-      <% @players.each do |player| %>
-      <li><input type="checkbox" name="players[]" id="<%= player.name %>" value="<%= player.id %>"> <%= player.name.split.map(&:capitalize).join(' ')
-   %></input></li>
-      <% end %><br>
+      <%= f.collection_check_boxes :player_ids, @players.all, :id, :player_name_capitalized_and_split %><br>
+
       <%= f.fields_for :players, @memory.players.build do |player_fields| %>
         <h4><%= player_fields.label :name, "Add a New Person/Pet: " %> <%= player_fields.text_field :name %></h4>
       <% end %>
+      
     <% else %>
       <h2><%= current_user.username.capitalize %>, add your first Person/Pet or your Name below:</h2>
       
