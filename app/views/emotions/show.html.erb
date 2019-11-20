@@ -1,3 +1,7 @@
+<body style="background: url(https://i.imgur.com/b3akcoP.jpg) center no-repeat;
+    background-size: cover;background-attachment: fixed;">
+<!–– Background Artist/Creator: TheDigitalArtist from Pixabay.com ––>
+
 <h1><%= @emotion.name.capitalize %> Memories:</h1><br>
   <% @emotion.memories.each do |memory| %>
     <li><a href="/memories/<%= memory.id %>"><%= memory.title.capitalize %></a></li><br>
