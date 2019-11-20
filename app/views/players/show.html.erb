@@ -2,9 +2,9 @@
     background-size: cover;background-attachment: fixed;">
 <!–– Background from wallpapersafari.com ––>
 
-<h1><%= @player.name.split.map(&:capitalize).join(' ') %> Memories:</h1><br>
+<h1><%= @player.player_name_capitalized_and_split %> Memories:</h1><br>
   <% @player.memories.each do |memory| %>
-    <li><a href="/memories/<%= memory.id %>"><%= memory.title.capitalize %></a></li><br>
+    <li><%= link_to memory.title, memory_path(memory) %></li><br><br>
   <% end %>
 
 <%= link_to "Edit Player", edit_player_path(@player.id) %><br><br>

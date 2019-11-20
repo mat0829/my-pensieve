@@ -5,8 +5,12 @@
 <h1>Edit Player</h1>
 
 <%= form_for @player do |f| %>
-    <h3><%= f.label :name %> <%= f.text_field :name %><br></h3><br>
+    <h3><%= f.label :name, "Name of Person/Pet: " %> <%= f.text_field :player_name_capitalized_and_split %><br></h3><br>
   
     <%= f.submit "Bottle Your Player" %>
 
-<% end %>
+<% end %><br>
+
+<%= link_to "Players Page", players_path %><br><br>
+
+<%= link_to "Home Page", root_path %>
