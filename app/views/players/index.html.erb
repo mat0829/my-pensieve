@@ -5,7 +5,7 @@
 <h1>People/Pets from Memories:</h1><br>
 
 <% @players.each do |player| %>
-  <h3>"<%= player.player_name_capitalized_and_split %>" <%= link_to 'View Memories', player_path(player) %></h3><br><br>
+  <h3>"<%= player.name_capitalized_and_split %>" <%= link_to 'View Memories', player_path(player) %></h3><br><br>
 <% end %>
 
 <%= button_to "Memories Page", memories_path, :method => "get" %><br>

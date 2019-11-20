@@ -1,0 +1,48 @@
+<%= form_for @memory do |f| %>
+  <h3><%= f.label :title %> <%= f.text_field :title %></h3><br>
+
+  <%= f.text_area :content, cols: "38", rows: "10", placeholder: "Enter Content here: "%><br><br>
+
+  <% if !@emotions.empty? %>
+
+    <h3>Choose an Emotion(s):</h3>
+    <li><%= f.collection_check_boxes :emotion_ids, @emotions.all, :id, :name_capitalized %></li><br>
+
+    <%= f.fields_for :emotions, @memory.emotions.build do |emotion_fields| %>
+      <h4><%= emotion_fields.label :name, "Create a New Emotion:" %> <%= emotion_fields.text_field :name %></h4>
+    <% end %><br>
+
+  <% else %>
+
+    <h2><%= current_user.username.capitalize %>, add your first Emotion below:</h2>
+    
+    <%= f.fields_for :emotions, @memory.emotions.build do |emotion_fields| %>
+      <h4><%= emotion_fields.label :name, "Create a New Emotion:" %> <%= emotion_fields.text_field :name %></h4><br>
+    <% end %>
+  <% end %>
+
+  <% if !@players.empty? %>
+
+    <h3>Choose a Person/Pet(s):</h3>
+    <li><%= f.collection_check_boxes :player_ids, @players.all, :id, :name_capitalized_and_split %></li><br>
+
+    <%= f.fields_for :players, @memory.players.build do |player_fields| %>
+      <h4><%= player_fields.label :name, "Add a New Person/Pet: " %> <%= player_fields.text_field :name %></h4>
+    <% end %><br>
+
+  <% else %>
+
+    <h2><%= current_user.username.capitalize %>, add your first Person/Pet or your Name below:</h2>
+    
+    <%= f.fields_for :players, @memory.players.build do |player_fields| %>
+      <h4><%= player_fields.label :name, "Add a New Person/Pet: " %> <%= player_fields.text_field :name %></h4><br>
+    <% end %>
+  <% end %>
+
+  <%= f.submit "Bottle Your Memory" %>
+    
+<% end %><br>
+
+<%= button_to "Memories Page", memories_path, :method => "get" %><br>
+
+<%= button_to "Home Page", root_path, :method => "get" %>

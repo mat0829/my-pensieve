@@ -1,20 +1,19 @@
 <ul>
-  <h1>"<%= @memory.title.capitalize %>"</h1><br>
-  <p><%= @memory.content.capitalize %></p>
+  <h1>"<%= @memory.title_capitalized %>"</h1><br>
+  <p><%= @memory.content_capitalized %></p>
 </ul>
 
 <h3>Emotions:</h3><br>
 <% @memory.emotions.each do |emotion| %>
-  <li><a href="/emotions/<%= emotion.id %>"><%= emotion.name.capitalize %></a></li><br>
+  <li><%= link_to emotion.name_capitalized, emotion_path(emotion) %></li><br><br>
 <% end %>
 
 <h3>People/Pets:</h3><br>
 <% @memory.players.each do |player| %>
-  <li><a href="/players/<%= player.id %>"><%= player.name.split.map(&:capitalize).join(' ')
- %></a></li><br>
+  <li><%= link_to player.name_capitalized_and_split, player_path(player) %></li><br><br>
 <% end %><br>
 
-<%= button_to "Edit Memory", edit_memory_path(@memory.id), :method => "get" %><br>
+<%= button_to "Edit Your Memory", edit_memory_path(@memory.id), :method => "get" %><br>
 
 <%= button_to "Memories Page", memories_path, :method => "get" %><br>
 

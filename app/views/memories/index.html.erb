@@ -4,7 +4,7 @@
     <ul>
     <% @memories.each do |memory| %>
       <div>
-        <h3>"<%= memory.memory_title_capitalized %>" <%= link_to 'View Memory', memory_path(memory) %></h3><br>
+        <h3>"<%= memory.title_capitalized %>" <%= link_to 'View Memory', memory_path(memory) %></h3><br>
       </div>
     <% end %>
     </ul><br>

@@ -2,15 +2,15 @@
     background-size: cover;background-attachment: fixed;">
 <!–– Background from wallpapersafari.com ––>
 
-<h1>Edit Player</h1>
+<h1>Edit Person/Pet</h1>
 
 <%= form_for @player do |f| %>
-    <h3><%= f.label :name, "Name of Person/Pet: " %> <%= f.text_field :player_name_capitalized_and_split %></h3><br><br>
+    <h3><%= f.label :name, "Name of Person/Pet: " %> <%= f.text_field :name_capitalized_and_split %></h3><br><br>
   
-    <%= f.submit "Bottle Your Player" %>
+    <%= f.submit "Bottle Your Person/Pet" %>
 
 <% end %><br>
 
-<%= button_to "Players Page", players_path, :method => "get" %><br>
+<%= button_to "People/Pets Page", players_path, :method => "get" %><br>
 
 <%= button_to "Home Page", root_path, :method => "get" %>
