@@ -2,9 +2,9 @@
     background-size: cover;background-attachment: fixed;">
 <!–– Background Artist/Creator: TheDigitalArtist from Pixabay.com ––>
 
-<h1><%= @emotion.name.capitalize %> Memories:</h1><br>
+<h1><%= @emotion.emotion_name_capitalized %> Memories:</h1><br>
   <% @emotion.memories.each do |memory| %>
-    <li><a href="/memories/<%= memory.id %>"><%= memory.title.capitalize %></a></li><br>
+    <li><%= link_to memory.title, memory_path(memory) %></li><br><br>
   <% end %>
 
 <%= link_to "Edit Emotion", edit_emotion_path(@emotion.id) %><br><br>
