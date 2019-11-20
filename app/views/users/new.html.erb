@@ -3,14 +3,14 @@
 <h4>Please Sign Up below or <%= link_to 'Log In', login_path %></h4><br>
 
 <%= form_for @user do |f| %>
-  <%= f.label :username %>
-  <%= f.text_field :username %><br><br>
+  <h3><%= f.label :username, "Username: " %>
+  <%= f.text_field :username %></h3><br>
 
-  <%= f.label :email %>
-  <%= f.text_field :email %><br><br>
+  <h3><%= f.label :email, "Email: " %>
+  <%= f.text_field :email %></h3><br>
 
-  <%= f.label :password %>
-  <%= f.password_field :password %>
+  <h3><%= f.label :password, "Password: " %>
+  <%= f.password_field :password %></h3><br>
 
   <%= f.submit "Create User" %>
     

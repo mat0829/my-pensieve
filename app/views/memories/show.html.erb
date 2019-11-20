@@ -3,15 +3,15 @@
   <p><%= @memory.content.capitalize %></p>
 </ul>
 
-<h3>Emotions:</h3>
+<h3>Emotions:</h3><br>
 <% @memory.emotions.each do |emotion| %>
-  <li><a href="/emotions/<%= emotion.id %>"><%= emotion.name.capitalize %></a></li>
+  <li><a href="/emotions/<%= emotion.id %>"><%= emotion.name.capitalize %></a></li><br>
 <% end %>
 
-<h3>People/Pets:</h3>
+<h3>People/Pets:</h3><br>
 <% @memory.players.each do |player| %>
   <li><a href="/players/<%= player.id %>"><%= player.name.split.map(&:capitalize).join(' ')
- %></a></li>
+ %></a></li><br>
 <% end %><br>
 
 <%= link_to "Edit Memory", edit_memory_path(@memory.id) %><br><br>

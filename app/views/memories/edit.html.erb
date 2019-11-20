@@ -3,12 +3,12 @@
 <%= form_for @memory do |f| %>
   <h3><%= f.label :title %> <%= f.text_field :title %></h3><br>
 
-  <%= f.text_area :content, cols: "38", rows: "10", placeholder: "Enter Content here: "%><br>
+  <%= f.text_area :content, cols: "38", rows: "10", placeholder: "Enter Content here: "%><br><br>
 
   <% if !@emotions.empty? %>
 
     <h3>Choose an Emotion(s):</h3>
-    <%= f.collection_check_boxes :emotion_ids, @emotions.all, :id, :emotion_name_capitalized %>
+    <li><%= f.collection_check_boxes :emotion_ids, @emotions.all, :id, :emotion_name_capitalized %></li><br>
 
     <%= f.fields_for :emotions, @memory.emotions.build do |emotion_fields| %>
       <h4><%= emotion_fields.label :name, "Create a New Emotion:" %> <%= emotion_fields.text_field :name %></h4>
@@ -26,11 +26,11 @@
   <% if !@players.empty? %>
 
     <h3>Choose a Person/Pet(s):</h3>
-    <%= f.collection_check_boxes :player_ids, @players.all, :id, :player_name_capitalized_and_split %><br><br>
+    <li><%= f.collection_check_boxes :player_ids, @players.all, :id, :player_name_capitalized_and_split %></li><br>
 
     <%= f.fields_for :players, @memory.players.build do |player_fields| %>
       <h4><%= player_fields.label :name, "Add a New Person/Pet: " %> <%= player_fields.text_field :name %></h4>
-    <% end %>
+    <% end %><br>
 
   <% else %>
 

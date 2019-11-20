@@ -5,6 +5,10 @@ class Memory < ApplicationRecord
     has_many :memory_players
     has_many :players, through: :memory_players
 
+    def memory_title_capitalized
+      title.capitalize
+    end
+
     def emotions_attributes=(emotion_attributes)
       emotion_attributes.values.each do |emotion_attribute|
         if emotion_attribute[:name].present?
