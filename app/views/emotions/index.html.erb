@@ -3,6 +3,7 @@
 <!–– Background Artist/Creator: TheDigitalArtist from Pixabay.com ––>
 
 <h1>Memory Emotions:</h1>
+
 <% @emotions.each do |emotion| %>
   <h3>"<%= emotion.emotion_name_capitalized %>" <%= link_to 'View Memories', emotion_path(emotion) %></h3><br>
 <% end %>

@@ -1,3 +1,7 @@
+<body style="background: url(https://i.imgur.com/5IdMNor.jpg) center no-repeat;
+    background-size: cover;background-attachment: fixed;">
+<!–– Background from wallpapersafari.com ––>
+
 <h1>People/Pets from Memories:</h1>
 <% @players.each do |player| %>
   <h3>"<%= player.name.capitalize %>" <a href="/players/<%= player.id %>">View Memories</a></h3><br>
