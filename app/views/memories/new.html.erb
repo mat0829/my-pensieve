@@ -37,7 +37,7 @@
       <h2><%= current_user.username.capitalize %>, add your first Person/Pet or your Name below:</h2>
       
       <%= f.fields_for :players, @memory.players.build do |player_fields| %>
-        <h4><%= player_fields.label :name, "Add a New Person/Pet: " %> <%= player_fields.text_field :name %></h4><br><br>
+        <h4><%= player_fields.label :name, "Add a New Person/Pet: " %> <%= player_fields.text_field :name %></h4>
       <% end %>
     <% end %>
   
@@ -45,6 +45,6 @@
       
   <% end %><br>
 
-<%= link_to "Memories Page", memories_path %><br><br>
+<%= button_to "Memories Page", memories_path, :method => "get" %><br>
 
-<%= link_to "Home Page", root_path %>
+<%= button_to "Home Page", root_path, :method => "get" %>

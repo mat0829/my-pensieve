@@ -2,12 +2,12 @@
     background-size: cover;background-attachment: fixed;">
 <!–– Background from wallpapersafari.com ––>
 
-<h1>People/Pets from Memories:</h1>
+<h1>People/Pets from Memories:</h1><br>
 
 <% @players.each do |player| %>
-  <h3>"<%= player.player_name_capitalized_and_split %>" <%= link_to 'View Memories', player_path(player) %></h3><br>
+  <h3>"<%= player.player_name_capitalized_and_split %>" <%= link_to 'View Memories', player_path(player) %></h3><br><br>
 <% end %>
 
-<%= link_to "Memories Page", memories_path %><br><br>
+<%= button_to "Memories Page", memories_path, :method => "get" %><br>
 
-<%= link_to "Home Page", root_path %><br><br>
+<%= button_to "Home Page", root_path, :method => "get" %>

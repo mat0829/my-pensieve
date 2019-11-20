@@ -5,9 +5,9 @@
 <h1>Memory Emotions:</h1>
 
 <% @emotions.each do |emotion| %>
-  <h3>"<%= emotion.emotion_name_capitalized %>" <%= link_to 'View Memories', emotion_path(emotion) %></h3><br>
+  <h3>"<%= emotion.emotion_name_capitalized %>" <%= link_to 'View Memories', emotion_path(emotion) %></h3><br><br>
 <% end %>
 
-<%= link_to "Memories Page", memories_path %><br><br>
+<%= button_to "Memories Page", memories_path, :method => "get" %><br>
 
-<%= link_to "Home Page", root_path %><br><br>
+<%= button_to "Home Page", root_path, :method => "get" %><br>

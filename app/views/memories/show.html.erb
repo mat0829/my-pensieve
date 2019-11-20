@@ -14,10 +14,10 @@
  %></a></li><br>
 <% end %><br>
 
-<%= link_to "Edit Memory", edit_memory_path(@memory.id) %><br><br>
+<%= button_to "Edit Memory", edit_memory_path(@memory.id), :method => "get" %><br>
 
-<%= link_to "Memories Page", memories_path %><br><br>
+<%= button_to "Memories Page", memories_path, :method => "get" %><br>
 
-<%= link_to "Home Page", root_path %><br><br>
+<%= button_to "Home Page", root_path, :method => "get" %><br><br><br>
 
-<%= button_to "Delete", memory_path(@memory), method: :delete, data: { confirm: "Are you sure?" } %>
+<%= button_to "Delete Memory", memory_path(@memory), method: :delete, data: { confirm: "Are you sure?" } %><br>

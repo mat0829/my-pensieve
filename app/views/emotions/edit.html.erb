@@ -5,12 +5,12 @@
 <h1>Edit Emotion</h1>
 
 <%= form_for @emotion do |f| %>
-    <h3><%= f.label :name, "Name of Emotion: " %> <%= f.text_field :emotion_name_capitalized %><br></h3><br>
+    <h3><%= f.label :name, "Name of Emotion: " %> <%= f.text_field :emotion_name_capitalized %></h3><br><br>
   
     <%= f.submit "Bottle Your Emotion" %>
 
 <% end %><br>
 
-<%= link_to "Emotions Page", emotions_path %><br><br>
+<%= button_to "Emotions Page", emotions_path, :method => "get" %><br>
 
-<%= link_to "Home Page", root_path %>
+<%= button_to "Home Page", root_path, :method => "get" %>

@@ -7,11 +7,11 @@
     <li><%= link_to memory.title, memory_path(memory) %></li><br><br>
   <% end %>
 
-<%= link_to "Edit Emotion", edit_emotion_path(@emotion.id) %><br><br>
+<%= button_to "Edit Emotion", edit_emotion_path(@emotion.id), :method => "get" %><br>
   
-<%= link_to "Emotions Page", emotions_path %><br><br>
+<%= button_to "Emotions Page", emotions_path, :method => "get" %><br>
 
-<%= link_to "Home Page", root_path %><br><br>
+<%= button_to "Home Page", root_path, :method => "get" %><br><br><br>
 
 <%= button_to "Delete Emotion", emotion_path(@emotion), method: :delete, data: { confirm: "Are you sure?" } %>
 
