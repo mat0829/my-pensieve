@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
     before_action :current_user
-    before_action :redirect_if_not_logged_in, except: [:new, :create, :home]
+    before_action :redirect_if_not_logged_in, except: [:new, :create, :create_facebook_user, :home]
 
   def logged_in?
     !!current_user
@@ -13,7 +13,7 @@ class ApplicationController < ActionController::Base
   end
 
   def redirect_if_not_logged_in
-    redirect to root_path unless logged_in?
+    redirect_to root_path unless logged_in?
   end
 
   helper_method :current_user, :logged_in?

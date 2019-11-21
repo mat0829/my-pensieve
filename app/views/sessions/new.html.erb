@@ -7,6 +7,6 @@
     <%= f.password_field :password, placeholder: 'Password:' %>
   
     <%= f.submit "Sign In" %>
-<% end %><br>
+<% end %><br> or <%= link_to('Log in with Facebook!', '/auth/facebook') %>
 
 <%= button_to "Create a New User", new_user_path, :method => "get" %>

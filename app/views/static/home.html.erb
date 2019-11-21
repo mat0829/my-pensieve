@@ -1,18 +1,24 @@
 <nav>
+
   <% if logged_in? %>
-    <h1>Welcome, <%=current_user.username.capitalize %>!</h1><br>
+
+    <% if current_user.image.present? %>
+      <h1>Welcome, <img src="<%= current_user.image %>"> <%=current_user.username_capitalized_and_split %>!</h1><br>
+    <% else %>
+      <h1>Welcome, <%=current_user.username_capitalized_and_split %>!</h1><br>
+    <% end %><br>
+    
     <%= link_to 'Add Memory', new_memory_path %> |
     <%= link_to 'Memories Page', memories_path %> |
     <%= link_to 'Emotions Page', emotions_path %> |
     <%= link_to 'People/Pets Page', players_path %> |
     <%= link_to 'Log Out', logout_path %>
-
-    
     
   <% else %>
+
     <h1>Please Sign In or Sign Up below:</h1><br>
     <%= link_to 'Sign Up', new_user_path %> |
     <%= link_to 'Log In', login_path %>
+    <%= link_to('Log in with Facebook!', '/auth/facebook') %>
   <%end %>
-
 </nav>
