@@ -8,6 +8,6 @@
   <h3>"<%= emotion.name_capitalized %>" <%= link_to 'View Memories', emotion_path(emotion) %></h3><br><br>
 <% end %>
 
-<%= button_to "Memories Page", memories_path, :method => "get" %><br>
+<%= render '/memories/to_memories' %><br>
 
 <%= button_to "Home Page", root_path, :method => "get" %><br>
