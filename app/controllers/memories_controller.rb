@@ -26,7 +26,7 @@ class MemoriesController < ApplicationController
     if @memory.save
       redirect_to @memory
     else
-      redirect to "/memories/new"
+      redirect_to "/memories/new"
     end
   end
 
@@ -40,7 +40,7 @@ class MemoriesController < ApplicationController
 
   def destroy
     @memory.destroy
-
+    flash.alert = "Your Memory has been deleted!"
     redirect_to memories_url
   end
 

@@ -4,6 +4,10 @@
 
 <h1>~ <%= image_tag(current_user.image) %> <%= render 'users/current_user' %>'s Memories ~</h1><br>
 
+<% if flash[:alert] %>
+  <h2><div class="alert"><%= flash[:alert] %></h2></div>
+<% end %><br>
+
 <% if !@memories.empty? %>
     <ul>
     <% @memories.each do |memory| %>

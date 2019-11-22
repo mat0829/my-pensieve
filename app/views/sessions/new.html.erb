@@ -1,3 +1,7 @@
+<body style="background: url(https://i.imgur.com/ZzijxMd.jpg) center no-repeat;
+    background-size: cover;background-attachment: fixed;">
+<!–– Background from wallpapersafari.com ––>
+
 <h1>Please Log In below:</h1><br>
 
 <%= form_for @user, :url => url_for(:controller => 'sessions', :action => 'create') do |f| %>
@@ -6,7 +10,7 @@
   
     <%= f.password_field :password, placeholder: 'Password:' %>
   
-    <%= f.submit "Sign In" %>
-<% end %><br> or <%= link_to('Log in with Facebook!', '/auth/facebook') %>
+    <%= f.submit "Log In" %><br>
+<% end %><br> or <%= link_to('Log in with Facebook!', '/auth/facebook') %><br><br>
 
 <%= button_to "Create a New User", new_user_path, :method => "get" %>

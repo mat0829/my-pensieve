@@ -1,4 +1,5 @@
 class Memory < ApplicationRecord
+    validates :title, :content, presence: true
     belongs_to :user
     has_many :memory_emotions
     has_many :emotions, through: :memory_emotions

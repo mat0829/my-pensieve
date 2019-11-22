@@ -37,6 +37,11 @@
     padding: 2.25%; /* 18px / 800px */
     width: 85%;
   }
+
+  .alert {
+    color: red;
+    text-align: center;
+  }
   
   input[type=submit] {
     background-color: black;
