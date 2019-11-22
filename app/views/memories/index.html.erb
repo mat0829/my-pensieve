@@ -2,7 +2,11 @@
     background-size: cover;background-attachment: fixed;">
 <!–– Background Artist/Creator: gr8effect from Pixabay.com ––>
 
-<h1>~ <%= image_tag(current_user.image) %> <%= render 'users/current_user' %>'s Memories ~</h1><br>
+<% if current_user.image.present? %>
+  <h1>~ <%= image_tag(current_user.image) %> <%= render 'users/current_user' %>'s Memories ~</h1><br>
+<% else %>
+  <h1>~ <%= render 'users/current_user' %>'s Memories ~</h1><br>
+<% end %>
 
 <% if flash[:alert] %>
   <h2><div class="alert"><%= flash[:alert] %></h2></div>
