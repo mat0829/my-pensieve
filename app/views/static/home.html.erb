@@ -1,3 +1,7 @@
+<body style="background: url(https://i.imgur.com/ZzijxMd.jpg) center no-repeat;
+    background-size: cover;background-attachment: fixed;">
+<!–– Background from wallpapersafari.com ––>
+
 <nav>
 
   <% if logged_in? %>
@@ -18,7 +22,7 @@
 
     <h1>Please Sign In or Sign Up below:</h1><br>
     <%= link_to 'Sign Up', new_user_path %> |
-    <%= link_to 'Log In', login_path %>
+    <%= link_to 'Log In', login_path %> |
     <%= link_to('Log in with Facebook!', '/auth/facebook') %>
   <%end %>
 </nav>
