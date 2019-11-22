@@ -13,4 +13,4 @@
 
 <%= render 'static/to_home' %><br><br><br><br>
 
-<%= button_to "Delete Person/Pet", player_path(@player), method: :delete, data: { confirm: "Are you sure?" } %>
+<%= button_to "Delete Person/Pet", player_path(@player), method: :delete, data: { confirm: "Are you sure?" }, class: 'delete-button' %>

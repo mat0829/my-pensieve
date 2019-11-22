@@ -13,5 +13,5 @@
 
 <%= render 'static/to_home' %><br><br><br>
 
-<%= button_to "Delete Emotion", emotion_path(@emotion), method: :delete, data: { confirm: "Are you sure?" } %>
+<%= button_to "Delete Emotion", emotion_path(@emotion), method: :delete, data: { confirm: "Are you sure?" }, class: 'delete-button' %>
 

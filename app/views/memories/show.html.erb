@@ -23,4 +23,4 @@
 
 <%= render 'static/to_home' %><br><br><br>
 
-<%= button_to "Delete Memory", memory_path(@memory), method: :delete, data: { confirm: "Are you sure?" } %><br>
+<%= button_to "Delete Memory", memory_path(@memory), method: :delete, data: { confirm: "Are you sure?" }, class: 'delete-button' %><br>
