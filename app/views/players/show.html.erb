@@ -11,6 +11,6 @@
   
 <%= button_to "People/Pets Page", players_path, :method => "get" %><br>
 
-<%= button_to "Home Page", root_path, :method => "get" %><br><br><br><br>
+<%= render 'static/to_home' %><br><br><br><br>
 
 <%= button_to "Delete Person/Pet", player_path(@player), method: :delete, data: { confirm: "Are you sure?" } %>

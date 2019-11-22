@@ -11,7 +11,7 @@
   
 <%= button_to "Emotions Page", emotions_path, :method => "get" %><br>
 
-<%= button_to "Home Page", root_path, :method => "get" %><br><br><br>
+<%= render 'static/to_home' %><br><br><br>
 
 <%= button_to "Delete Emotion", emotion_path(@emotion), method: :delete, data: { confirm: "Are you sure?" } %>
 

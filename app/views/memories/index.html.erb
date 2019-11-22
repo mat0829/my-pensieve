@@ -1,3 +1,7 @@
+<body style="background: url(https://i.imgur.com/StxTa9A.jpg) center no-repeat;
+    background-size: cover;background-attachment: fixed;">
+<!–– Background Artist/Creator: gr8effect from Pixabay.com ––>
+
 <h1>~ <%= image_tag(current_user.image) %> <%= render 'users/current_user' %>'s Memories ~</h1><br>
 
 <% if !@memories.empty? %>
@@ -17,4 +21,4 @@
 
   <%= button_to "Add a Memory", new_memory_path %><br>
 
-  <%= button_to "Home Page", root_path, :method => "get" %>
+  <%= render 'static/to_home' %>
