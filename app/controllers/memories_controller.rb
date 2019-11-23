@@ -40,7 +40,6 @@ class MemoriesController < ApplicationController
 
   def destroy
     @memory.destroy
-    flash.alert = "Your Memory has been deleted!"
     redirect_to memories_url
   end
 

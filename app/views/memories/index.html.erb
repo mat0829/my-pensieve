@@ -8,10 +8,6 @@
   <h1>~ <%= render 'users/current_user' %>'s Memories ~</h1><br>
 <% end %>
 
-<% if flash[:alert] %>
-  <h2><div class="alert"><%= flash[:alert] %></h2></div>
-<% end %><br>
-
 <% if !@memories.empty? %>
     <ul>
     <% @memories.each do |memory| %>
