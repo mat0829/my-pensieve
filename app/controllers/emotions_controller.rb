@@ -2,7 +2,7 @@ class EmotionsController < ApplicationController
     before_action :set_emotion, only: [:show, :edit, :update, :delete, :destroy]
   
   def index
-    @emotions = current_user.emotions
+    @emotions = current_user.emotions.alphabetized
 
     render 'index'
   end

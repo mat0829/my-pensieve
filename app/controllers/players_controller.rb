@@ -2,7 +2,7 @@ class PlayersController < ApplicationController
   before_action :set_player, only: [:show, :edit, :update, :delete, :destroy]
   
   def index
-    @players = current_user.players
+    @players = current_user.players.alphabetized
 
     render 'index'
   end

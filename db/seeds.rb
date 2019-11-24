@@ -1,7 +1,28 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+
+emotions = Emotion.create!([{ name: 'Joy'}, { name: 'Trust' }, { name: 'Fear' }, { name: 'Surprise' }, 
+  { name: 'Sadness' }, { name: 'Disgust' }, { name: 'Anger' }, { name: 'Anticipation' }, 
+  { name: 'Love' }, { name: 'Remorse' }])
+
+10.times do |n|
+  title       = Faker::TvShows::GameOfThrones.unique.quote  
+  content     = Faker::Lorem.paragraph(sentence_count: 10)
+  user_id     = "1"
+
+  memory = Memory.create!(
+    title:        title,
+    content:      content,
+    user_id:      user_id
+  )
+
+  player = Player.create!(
+    name:     Faker::TvShows::GameOfThrones.unique.character
+  )
+
+  memory.emotions << emotions.pop
+  memory.players << player
+end
+
+puts "After seeding the database: "
+puts " - There are #{Memory.count} memories."
+puts " - There are #{Emotion.count} emotions."
+puts " - There are #{Player.count} people and/or pets."

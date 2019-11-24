@@ -17,6 +17,8 @@
   <li><%= link_to player.name_capitalized_and_split, player_path(player) %></li><br>
 <% end %><br>
 
+<%= button_to "Add Another Memory", new_memory_path %><br>
+
 <%= button_to "Edit Your Memory", edit_memory_path(@memory.id), :method => "get" %><br>
 
 <%= render 'to_memories' %><br>
