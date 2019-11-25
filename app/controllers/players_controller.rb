@@ -1,6 +1,7 @@
 class PlayersController < ApplicationController
   before_action :set_player, only: [:show, :edit, :update, :delete, :destroy]
-  
+  layout "players_layout"
+
   def index
     @players = current_user.players.alphabetized
 

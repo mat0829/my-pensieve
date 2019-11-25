@@ -1,7 +1,3 @@
-<body style="background: url(https://i.imgur.com/5IdMNor.jpg) center no-repeat;
-    background-size: cover;background-attachment: fixed;">
-<!–– Background from wallpapersafari.com ––>
-
 <h1><%= @player.name_capitalized_and_split %> Memories:</h1><br>
   <% @player.memories.each do |memory| %>
     <li><%= link_to memory.title_capitalized, memory_path(memory) %></li><br>
