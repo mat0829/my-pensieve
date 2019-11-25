@@ -9,20 +9,20 @@
 <% end %>
 
 <% if !@memories.empty? %>
-    <ul>
-    <% @memories.each do |memory| %>
-      <div>
-        <h3>"<%= memory.title_capitalized %>" <%= link_to 'View Memory', memory_path(memory) %></h3><br>
-      </div>
-    <% end %>
-    </ul><br>
-    
-  <% else %>
-    
-    <h2><%= render 'users/current_user' %>, you haven't made any Memories yet</h2>
-    
+  <ul>
+  <% @memories.each do |memory| %>
+    <div>
+      <h3>"<%= memory.title_capitalized %>" <%= link_to 'View Memory', memory_path(memory) %></h3><br>
+    </div>
   <% end %>
+  </ul>
+    
+<% else %>
+    
+  <h2><%= render 'users/current_user' %>, you haven't made any Memories yet</h2>
+    
+<% end %>
 
-  <%= button_to "Add a Memory", new_memory_path %><br>
+<%= button_to "Add a Memory", new_memory_path %><br>
 
-  <%= render 'static/to_home' %>
+<%= render 'static/to_home' %>

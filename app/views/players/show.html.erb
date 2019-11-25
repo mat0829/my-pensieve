@@ -2,15 +2,15 @@
     background-size: cover;background-attachment: fixed;">
 <!–– Background from wallpapersafari.com ––>
 
-<h1><%= @player.name_capitalized_and_split %> Memories:</h1><br><br>
+<h1><%= @player.name_capitalized_and_split %> Memories:</h1><br>
   <% @player.memories.each do |memory| %>
-    <li><%= link_to memory.title_capitalized, memory_path(memory) %></li><br><br>
-  <% end %>
+    <li><%= link_to memory.title_capitalized, memory_path(memory) %></li><br>
+  <% end %><br>
+
+<%= button_to "Delete Your Person/Pet", player_path(@player), method: :delete, data: { confirm: "Are you sure?" }, class: 'delete-button' %><br>
 
 <%= button_to "Edit Your Person/Pet", edit_player_path(@player.id), :method => "get" %><br>
   
 <%= button_to "People/Pets Page", players_path, :method => "get" %><br>
 
-<%= render 'static/to_home' %><br><br><br><br>
-
-<%= button_to "Delete Person/Pet", player_path(@player), method: :delete, data: { confirm: "Are you sure?" }, class: 'delete-button' %>
+<%= render 'static/to_home' %>

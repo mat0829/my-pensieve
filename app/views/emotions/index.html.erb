@@ -2,12 +2,12 @@
     background-size: cover;background-attachment: fixed;">
 <!–– Background Artist/Creator: TheDigitalArtist from Pixabay.com ––>
 
-<h1>Memory Emotions:</h1>
+<h1>Memory Emotions:</h1><br>
 
 <% @emotions.each do |emotion| %>
-  <h3>"<%= emotion.name_capitalized %>" <%= link_to 'View Memories', emotion_path(emotion) %></h3><br><br>
+  <h3>"<%= emotion.name_capitalized %>" <%= link_to 'View Memories', emotion_path(emotion) %></h3><br>
 <% end %>
 
 <%= render '/memories/to_memories' %><br>
 
-<%= render 'static/to_home' %><br>
+<%= render 'static/to_home' %>
