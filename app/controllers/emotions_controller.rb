@@ -1,6 +1,7 @@
 class EmotionsController < ApplicationController
     before_action :set_emotion, only: [:show, :edit, :update, :delete, :destroy]
-  
+    layout "emotions_layout"
+
   def index
     @emotions = current_user.emotions.alphabetized
 
