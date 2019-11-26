@@ -2,9 +2,9 @@ class Memory < ApplicationRecord
   validates :title, :content, presence: true
   belongs_to :user
   has_many :memory_emotions
-  has_many :emotions, through: :memory_emotions
+  has_many :emotions, through: :memory_emotions, dependent: :destroy
   has_many :memory_players
-  has_many :players, through: :memory_players
+  has_many :players, through: :memory_players, dependent: :destroy
 
   scope :alphabetized, -> { order(:title)}
   #scope :newest, -> { order(created_at: :desc) }

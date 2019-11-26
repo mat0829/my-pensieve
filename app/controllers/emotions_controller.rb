@@ -9,15 +9,13 @@ class EmotionsController < ApplicationController
   end
 
   def new
-    @emotions = Emotions.new
+    @emotion = Emotion.new
   end
 
   def show
-    render 'show'
   end
 
   def edit
-    render 'edit'
   end
 
   def update

@@ -13,11 +13,9 @@ class PlayersController < ApplicationController
   end
 
   def show
-    render 'show'
   end
 
   def edit
-    render 'edit'
   end
 
   def update

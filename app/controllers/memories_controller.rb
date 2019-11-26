@@ -11,14 +11,9 @@ class MemoriesController < ApplicationController
 
   def new
     @memory = Memory.new
-    @emotions = current_user.emotions
-    @players = current_user.players
-    render "new"
   end
 
   def edit
-    @emotions = current_user.emotions
-    @players = current_user.players
   end
 
   def create
@@ -26,7 +21,7 @@ class MemoriesController < ApplicationController
     if @memory.save
       redirect_to @memory
     else
-      redirect_to "/memories/new"
+      render 'new'
     end
   end
 

@@ -22,7 +22,7 @@
 <%= button_to "Delete Your Memory", memory_path(@memory), method: :delete, data: { confirm: "Are you sure?" }, 
                class: 'delete-button' %><br>
 
-<%= button_to "Edit Your Memory", edit_memory_path(@memory.id), :method => "get" %><br>
+<%= button_to "Edit Your Memory", edit_memory_path(@memory), :method => "get" %><br>
 
 <%= render 'to_memories' %><br>
 

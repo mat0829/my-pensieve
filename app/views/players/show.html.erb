@@ -5,7 +5,7 @@
 
 <%= button_to "Delete Your Person/Pet", player_path(@player), method: :delete, data: { confirm: "Are you sure?" }, class: 'delete-button' %><br>
 
-<%= button_to "Edit Your Person/Pet", edit_player_path(@player.id), :method => "get" %><br>
+<%= button_to "Edit Your Person/Pet", edit_player_path(@player), :method => "get" %><br>
   
 <%= button_to "People/Pets Page", players_path, :method => "get" %><br>
 
