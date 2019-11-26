@@ -3,16 +3,9 @@ class EmotionsController < ApplicationController
     layout "emotions_layout"
 
   def index
-    @emotions = current_user.emotions.alphabetized
+    @emotions = current_user.emotions.uniq
 
     render 'index'
-  end
-
-  def new
-    @emotion = Emotion.new
-  end
-
-  def show
   end
 
   def edit

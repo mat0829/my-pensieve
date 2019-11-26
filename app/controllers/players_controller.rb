@@ -3,13 +3,13 @@ class PlayersController < ApplicationController
   layout "players_layout"
 
   def index
-    @players = current_user.players.alphabetized
+    @players = current_user.players.uniq
 
     render 'index'
   end
 
   def new
-    @players = Players.new
+    @player = Player.new
   end
 
   def show

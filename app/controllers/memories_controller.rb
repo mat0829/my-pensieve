@@ -2,7 +2,7 @@ class MemoriesController < ApplicationController
   before_action :set_memory, only: [:show, :edit, :update, :delete, :destroy]
 
   def index
-    @memories = current_user.memories.alphabetized
+    @memories = current_user.memories
     render 'index'
   end
 
@@ -17,6 +17,7 @@ class MemoriesController < ApplicationController
   end
 
   def create
+    #raise params.inspect
     @memory = current_user.memories.build(memory_params)
     if @memory.save
       redirect_to @memory
