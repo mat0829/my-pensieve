@@ -1,8 +1,5 @@
 class MemoriesController < ApplicationController
   before_action :set_memory, only: [:show, :edit, :update, :delete, :destroy]
-  layout "memories_index_layout", only: [:index]
-  layout "memories_form_layout", only: [:new, :edit]
-  layout "memories_show_layout", only: [:show]
 
   def index
     @memories = current_user.memories.alphabetized

@@ -1,3 +1,5 @@
+<%= render 'index_background' %>
+
 <% if current_user.image.present? %>
   <h1>~ <%= image_tag(current_user.image) %> <%= render 'users/current_user' %>'s Memories ~</h1><br>
 <% else %>
