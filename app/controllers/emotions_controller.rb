@@ -3,7 +3,7 @@ class EmotionsController < ApplicationController
     layout "emotions_layout"
 
   def index
-    @emotions = current_user.emotions.uniq
+    @emotions = current_user.emotions.alphabetized.uniq
 
     render 'index'
   end

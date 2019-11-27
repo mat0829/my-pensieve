@@ -3,7 +3,7 @@ class PlayersController < ApplicationController
   layout "players_layout"
 
   def index
-    @players = current_user.players.uniq
+    @players = current_user.players.alphabetized.uniq
 
     render 'index'
   end

@@ -2,7 +2,7 @@ class MemoriesController < ApplicationController
   before_action :set_memory, only: [:show, :edit, :update, :delete, :destroy]
 
   def index
-    @memories = current_user.memories
+    @memories = current_user.memories.alphabetized
     render 'index'
   end
 
