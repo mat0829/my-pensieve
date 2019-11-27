@@ -8,10 +8,6 @@ class PlayersController < ApplicationController
     render 'index'
   end
 
-  def new
-    @player = Player.new
-  end
-
   def show
   end
 

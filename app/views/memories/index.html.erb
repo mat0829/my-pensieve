@@ -1,7 +1,3 @@
-<body style="background: url(https://i.imgur.com/StxTa9A.jpg) center no-repeat;
-    background-size: cover;background-attachment: fixed;">
-<!–– Background Artist/Creator: gr8effect from Pixabay.com ––>
-
 <% if current_user.image.present? %>
   <h1>~ <%= image_tag(current_user.image) %> <%= render 'users/current_user' %>'s Memories ~</h1><br>
 <% else %>

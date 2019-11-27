@@ -1,3 +1,6 @@
+User.create!([
+  {username: "mat0829", email: "example@example.com", password_digest: "password", image: nil, uid: nil}
+])
 Memory.create!([
   {title: "There are no heroes...in life, the monsters win.", content: "Incidunt sint enim. Aliquam ratione voluptatibus. Ipsam qui vero. Similique autem repellat. Voluptatem et nobis. Aut sint vel. Ab omnis tempore. In et non. Suscipit nulla perspiciatis. Sit aperiam id.", user_id: 1},
   {title: "All dwarfs are bastards in their father's eyes", content: "Illum non cupiditate. Quo ab quia. Enim labore magnam. Eligendi eum non. Harum optio eum. Aut ea aut. Itaque doloribus minus. Aut praesentium rerum. Molestiae aut sapiente. Occaecati reprehenderit impedit.", user_id: 1},
