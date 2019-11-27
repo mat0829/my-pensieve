@@ -48,10 +48,16 @@
     list-style: square;
   }
 
-  .field_with_errors {
-    padding: 1px;
-    border: 2px solid red;
-    display: inline-block;
+  .field_with_errors input[type="text"], textarea cols{
+    padding: 3px;
+    border: 3px solid red;
+    display: block;
+  }
+
+  .field_with_errors textarea{
+    padding: 3px;
+    border: 3px solid red;
+    display: block;
   }
   
   .delete-button.delete-button {
