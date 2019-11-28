@@ -1,6 +1,6 @@
 <h1><%= @emotion.name_capitalized %> Memories:</h1><br>
   <% @emotion.memories.each do |memory| %>
-    <li><%= link_to memory.title_capitalized, memory_path(memory) %></li><br>
+    <li><%= link_to memory.title_capitalized_and_split, memory_path(memory) %></li><br>
   <% end %><br>
 
 <%= button_to "Delete Your Emotion", emotion_path(@emotion), method: :delete, data: { confirm: "Are you sure?" }, class: 'delete-button' %><br>

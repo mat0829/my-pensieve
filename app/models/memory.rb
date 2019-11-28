@@ -9,12 +9,12 @@ class Memory < ApplicationRecord
   scope :alphabetized, -> { order(:title)}
   #scope :newest, -> { order(created_at: :desc) }
 
-  def title_capitalized
-    title.capitalize
+  def title_capitalized_and_split
+    title.split.map(&:capitalize).join(' ')
   end
 
-  def content_capitalized
-    content.capitalize
+  def content_capitalized_and_split
+    content.split.map(&:capitalize).join(' ')
   end
 
   def emotions_attributes=(emotion_attributes)
