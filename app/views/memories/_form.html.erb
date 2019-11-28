@@ -8,7 +8,7 @@
 
   <%= f.text_area :content, cols: "38", rows: "10", placeholder: "Enter Content here: "%><br><br>
 
-  <% if !@emotions.empty? %>
+  <% if !@emotions.nil? %>
 
     <h3>Choose an Emotion(s):</h3><br>
     <li><%= f.collection_check_boxes :emotion_ids, @emotions.all, :id, :name_capitalized %></li><br>
@@ -26,7 +26,7 @@
     <% end %>
   <% end %>
 
-  <% if !@players.empty? %>
+  <% if !@players.nil? %>
 
     <h3>Choose a Person/Pet(s):</h3><br>
     <li><%= f.collection_check_boxes :player_ids, @players.all, :id, :name_capitalized_and_split %></li><br>
