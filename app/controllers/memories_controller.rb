@@ -18,6 +18,8 @@ class MemoriesController < ApplicationController
   end
 
   def edit
+    @emotions = current_user.emotions
+    @players = current_user.players
   end
 
   def create
