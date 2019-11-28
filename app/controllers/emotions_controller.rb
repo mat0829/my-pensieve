@@ -8,6 +8,10 @@ class EmotionsController < ApplicationController
     render 'index'
   end
 
+  def new
+    @emotion = current_user.emotions.new
+  end
+
   def edit
   end
 
@@ -28,7 +32,7 @@ class EmotionsController < ApplicationController
   private
 
   def set_emotion
-    @emotion = Emotion.find(params[:id])
+    @emotion = current_user.emotions.find(params[:id])
   end
 
   def emotion_params

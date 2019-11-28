@@ -8,6 +8,10 @@ class PlayersController < ApplicationController
     render 'index'
   end
 
+  def new
+    @player = current_user.players.new
+  end
+
   def show
   end
 
@@ -31,7 +35,7 @@ class PlayersController < ApplicationController
   private
 
   def set_player
-    @player = Player.find(params[:id])
+    @player = current_user.players.find(params[:id])
   end
 
   def player_params
