@@ -8,13 +8,13 @@
 
   <%= f.text_area :content, cols: "38", rows: "10", placeholder: "Enter Content here: "%><br><br>
 
-  <% if !@emotions.nil? %>
+  <% if !@emotions.blank? %>
 
     <h3>Choose an Emotion(s):</h3><br>
-    <li><%= f.collection_check_boxes :emotion_ids, @emotions.all, :id, :name_capitalized %></li><br>
+    <li><%= f.collection_check_boxes :emotion_ids, @emotions.all.uniq, :id, :name_capitalized %></li><br>
 
     <%= f.fields_for :emotions, @memory.emotions.build do |emotions_fields| %>
-      <h4><%= emotions_fields.label :name, "Create a New Emotion:" %> <%= emotions_fields.text_field :name %></h4>
+      <h4><%= emotions_fields.label :name, "Create a New Emotion:" %> <%= emotions_fields.text_field :name, style: 'text-transform: capitalize;' %></h4>
     <% end %><br>
 
   <% else %>
@@ -22,17 +22,17 @@
     <h2><%= render 'users/current_user' %>, add your first Emotion below:</h2>
     
     <%= f.fields_for :emotions, @memory.emotions.build do |emotions_fields| %>
-      <h4><%= emotions_fields.label :name, "Create a New Emotion:" %> <%= emotions_fields.text_field :name %></h4><br>
+      <h4><%= emotions_fields.label :name, "Create a New Emotion:" %> <%= emotions_fields.text_field :name, style: 'text-transform: capitalize;' %></h4><br>
     <% end %>
   <% end %>
 
-  <% if !@players.nil? %>
+  <% if !@players.blank? %>
 
     <h3>Choose a Person/Pet(s):</h3><br>
-    <li><%= f.collection_check_boxes :player_ids, @players.all, :id, :name_capitalized_and_split %></li><br>
+    <li><%= f.collection_check_boxes :player_ids, @players.all.uniq, :id, :name_capitalized_and_split %></li><br>
 
     <%= f.fields_for :players, @memory.players.build do |players_fields| %>
-      <h4><%= players_fields.label :name, "Add a New Person/Pet: " %> <%= players_fields.text_field :name %></h4>
+      <h4><%= players_fields.label :name, "Add a New Person/Pet: " %> <%= players_fields.text_field :name, style: 'text-transform: capitalize;' %></h4>
     <% end %><br>
 
   <% else %>
@@ -40,7 +40,7 @@
     <h2><%= render 'users/current_user' %>, add your first Person/Pet or your Name below:</h2>
     
     <%= f.fields_for :players, @memory.players.build do |players_fields| %>
-      <h4><%= players_fields.label :name, "Add a New Person/Pet: " %> <%= players_fields.text_field :name %></h4><br>
+      <h4><%= players_fields.label :name, "Add a New Person/Pet: " %> <%= players_fields.text_field :name, style: 'text-transform: capitalize;' %></h4><br>
     <% end %>
   <% end %>
 

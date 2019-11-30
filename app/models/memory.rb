@@ -13,7 +13,7 @@ class Memory < ApplicationRecord
     title.split.map(&:capitalize).join(' ')
   end
 
-  def content_capitalized_and_split
+  def content_capitalized
     content.split.map(&:capitalize).join(' ')
   end
 
