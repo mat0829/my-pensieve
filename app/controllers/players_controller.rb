@@ -8,11 +8,12 @@ class PlayersController < ApplicationController
     render 'index'
   end
 
-  def new
-    @player = current_user.players.new
+  def show
+    @player.memories = @player.memories.where(user_id: current_user.id)
   end
 
-  def show
+  def new
+    @player = current_user.players.new
   end
 
   def edit

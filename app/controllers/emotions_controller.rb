@@ -8,6 +8,10 @@ class EmotionsController < ApplicationController
     render 'index'
   end
 
+  def show
+    @emotion.memories = @emotion.memories.where(user_id: current_user.id)
+  end
+
   def new
     @emotion = current_user.emotions.new
   end
