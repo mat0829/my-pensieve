@@ -17,7 +17,7 @@
 
 <%= button_to "Add Another Memory", new_memory_path %><br>
 
-<%= button_to "Delete Your Memory", memory_path(@memory), method: :delete, data: { confirm: "Are you sure?" }, 
+<%= button_to "Delete Your Memory", memory_path(@memory), method: :delete, data: { confirm: "Are you sure you want to delete your Memory?" }, 
                class: 'delete-button' %><br>
 
 <%= button_to "Edit Your Memory", edit_memory_path(@memory), :method => "get" %><br>

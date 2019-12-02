@@ -3,7 +3,7 @@
     <li><%= link_to memory.title_capitalized_and_split, memory_path(memory) %></li><br>
   <% end %><br>
 
-<%= button_to "Delete Your Person/Pet", player_path(@player), method: :delete, data: { confirm: "Are you sure?" }, class: 'delete-button' %><br>
+<%= button_to "Delete Your Person/Pet", player_path(@player), method: :delete, data: { confirm: "Are you sure you want to delete your Person/Pet?" }, class: 'delete-button' %><br>
 
 <%= button_to "Edit Your Person/Pet", edit_player_path(@player), :method => "get" %><br>
   
