@@ -14,7 +14,7 @@ class Memory < ApplicationRecord
   end
 
   def content_capitalized
-    content.split.map(&:capitalize).join(' ')
+    content.capitalize
   end
 
   def emotions_attributes=(emotion_attributes)

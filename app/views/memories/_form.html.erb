@@ -2,11 +2,11 @@
 
 <%= form_for @memory do |f| %>
   
-  <%= render 'errors'%>
+  <%= render 'errors' %>
 
   <h3><%= f.label :title %> <%= f.text_field :title, :autocomplete => :off %></h3><br>
 
-  <%= f.text_area :content, cols: "38", rows: "10", placeholder: "Enter Content here: "%><br><br>
+  <%= f.text_area :content_capitalized, cols: "38", rows: "10", placeholder: "Enter Content here: "%><br><br>
 
   <% if !@emotions.blank? %>
 

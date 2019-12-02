@@ -2,7 +2,7 @@
 
 <ul>
   <h1>"<%= @memory.title_capitalized_and_split %>"</h1><br>
-  <p><%= @memory.content_capitalized %></p>
+  <p><%= simple_format(@memory.content) %></p>
 </ul>
 
 <h3>Emotions:</h3><br>
