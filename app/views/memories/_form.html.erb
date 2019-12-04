@@ -13,22 +13,18 @@
     <h3>Choose an Emotion(s):</h3><br>
     <li><%= f.collection_check_boxes :emotion_ids, @emotions.all.uniq, :id, :name_capitalized %></li><br>
 
-    <%= f.fields_for :emotions, @memory.emotions.build do |emotions_fields| %>
-      <% 2.times do %>
-        <h4><%= emotions_fields.label :name, "Create a New Emotion:" %> <%= emotions_fields.text_field :name, :autocomplete => :off, style: 'text-transform: capitalize;' %>
-        <%= emotions_fields.label :name, "Create a New Emotion:" %> <%= emotions_fields.text_field :name, :autocomplete => :off, style: 'text-transform: capitalize;' %></h4><br>
-      <% end %>
+    <%= f.fields_for :emotions do |emotions_fields| %>
+      <h4><%= emotions_fields.label :name, "Create a New Emotion:" %> <%= emotions_fields.text_field :name, 
+      :autocomplete => :off, style: 'text-transform: capitalize;' %></h4><br>
     <% end %><br>
 
   <% else %>
 
     <h2><%= render 'users/current_user' %>, add your first Emotion(s) below:</h2>
     
-    <%= f.fields_for :emotions, @memory.emotions.build do |emotions_fields| %>
-      <% 2.times do %>
-        <h4><%= emotions_fields.label :name, "Create a New Emotion:" %> <%= emotions_fields.text_field :name, :autocomplete => :off, style: 'text-transform: capitalize;' %>
-        <%= emotions_fields.label :name, "Create a New Emotion:" %> <%= emotions_fields.text_field :name, :autocomplete => :off, style: 'text-transform: capitalize;' %></h4><br>
-      <% end %>
+    <%= f.fields_for :emotions do |emotions_fields| %>
+      <h4><%= emotions_fields.label :name, "Create a New Emotion:" %> <%= emotions_fields.text_field :name, 
+      :autocomplete => :off, style: 'text-transform: capitalize;' %></h4><br>
     <% end %>
   <% end %>
 
@@ -37,22 +33,18 @@
     <h3>Choose a Person/Pet(s):</h3><br>
     <li><%= f.collection_check_boxes :player_ids, @players.all.uniq, :id, :name_capitalized_and_split %></li><br>
 
-    <%= f.fields_for :players, @memory.players.build do |players_fields| %>
-      <% 2.times do %>
-        <h4><%= players_fields.label :name, "Add a New Person/Pet: " %><%= players_fields.text_field :name, :autocomplete => :off, style: 'text-transform: capitalize;' %> 
-        <%= players_fields.label :name, "Add a New Person/Pet: " %> <%= players_fields.text_field :name, :autocomplete => :off, style: 'text-transform: capitalize;' %></h4><br>
-      <% end %>
+    <%= f.fields_for :players do |players_fields| %>
+      <h4><%= players_fields.label :name, "Add a New Person/Pet: " %><%= players_fields.text_field :name, 
+      :autocomplete => :off, style: 'text-transform: capitalize;' %></h4><br>
     <% end %><br>
 
   <% else %>
 
     <h2><%= render 'users/current_user' %>, add your first Person/Pet(s) or your Name below:</h2>
     
-    <%= f.fields_for :players, @memory.players.build do |players_fields| %>
-      <% 2.times do %>
-        <h4><%= players_fields.label :name, "Add a New Person/Pet: " %> <%= players_fields.text_field :name, :autocomplete => :off, style: 'text-transform: capitalize;' %>
-        <%= players_fields.label :name, "Add a New Person/Pet: " %> <%= players_fields.text_field :name, :autocomplete => :off, style: 'text-transform: capitalize;' %></h4><br>
-      <% end %>
+    <%= f.fields_for :players do |players_fields| %>
+      <h4><%= players_fields.label :name, "Add a New Person/Pet: " %> <%= players_fields.text_field :name, 
+      :autocomplete => :off, style: 'text-transform: capitalize;' %></h4><br>
     <% end %>
   <% end %>
 
