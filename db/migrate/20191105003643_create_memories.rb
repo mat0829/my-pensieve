@@ -4,6 +4,7 @@ class CreateMemories < ActiveRecord::Migration[6.0]
       t.string :title
       t.string :content
       t.integer :user_id
+      t.integer :memories_count
 
       t.timestamps
     end

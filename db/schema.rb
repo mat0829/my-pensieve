@@ -14,6 +14,7 @@ ActiveRecord::Schema.define(version: 2019_11_05_004531) do
 
   create_table "emotions", force: :cascade do |t|
     t.string "name"
+    t.integer "emotions_count"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -22,6 +23,7 @@ ActiveRecord::Schema.define(version: 2019_11_05_004531) do
     t.string "title"
     t.string "content"
     t.integer "user_id"
+    t.integer "memories_count"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -42,6 +44,7 @@ ActiveRecord::Schema.define(version: 2019_11_05_004531) do
 
   create_table "players", force: :cascade do |t|
     t.string "name"
+    t.integer "players_count"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

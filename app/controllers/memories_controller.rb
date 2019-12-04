@@ -13,8 +13,10 @@ class MemoriesController < ApplicationController
     @memory = current_user.memories.new
     @emotions = current_user.emotions
     @players = current_user.players
-    @memory.emotions.build
-    @memory.players.build
+    2.times do 
+      @memory.emotions.build
+      @memory.players.build
+    end
   end
 
   def edit
@@ -24,8 +26,6 @@ class MemoriesController < ApplicationController
 
   def create
     @memory = current_user.memories.build(memory_params)
-    #@memory.emotion_ids = params[:emotions]
-    #@memory.player_ids = params[:players]
     if @memory.save
       redirect_to @memory
     else

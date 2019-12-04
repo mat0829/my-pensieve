@@ -1,4 +1,4 @@
-<h1>People/Pets from Memories:</h1><br>
+<h1><%= current_user.username %>'s <%= current_user.players_count %> People/Pets from Memories:</h1><br>
 
 <% @players.each do |player| %>
   <h3>"<%= player.name_capitalized_and_split %>" <%= link_to 'View Memories', player_path(player) %></h3><br>

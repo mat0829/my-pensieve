@@ -1,7 +1,7 @@
 <%= render 'index_background' %>
 
 <% if current_user.image.present? %>
-  <h1>~ <%= image_tag(current_user.image) %> <%= render 'users/current_user' %>'s Memories ~</h1><br>
+  <h1>~ <%= image_tag(current_user.image) %> <%= render 'users/current_user' %>'s <%= current_user.memories_count %> Memories ~</h1><br>
 <% else %>
   <h1>~ <%= render 'users/current_user' %>'s Memories ~</h1><br>
 <% end %>
