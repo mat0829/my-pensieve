@@ -13,10 +13,6 @@ class MemoriesController < ApplicationController
     @memory = current_user.memories.new
     @emotions = current_user.emotions
     @players = current_user.players
-    3.times do 
-      @memory.emotions.build
-      @memory.players.build
-    end
   end
 
   def edit
