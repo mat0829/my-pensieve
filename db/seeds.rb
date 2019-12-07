@@ -14,12 +14,14 @@ emotions = Emotion.create!([{ name: 'joy'}, { name: 'trust' }, { name: 'fear' },
     user_id:      user_id
   )
 
-  player = Player.create!(
-    name:     Faker::Movies::HarryPotter.unique.character.sub(/^[A-Z]/, &:downcase)
-  )
+  players = Player.create!([
+    {name:     Faker::Movies::HarryPotter.unique.character.sub(/^[A-Z]/, &:downcase)},
+    {name:     Faker::Movies::HarryPotter.unique.character.sub(/^[A-Z]/, &:downcase)},
+    {name:     Faker::Movies::HarryPotter.unique.character.sub(/^[A-Z]/, &:downcase)}
+  ])
 
   memory.emotions << emotions.pop
-  memory.players << player
+  memory.players << players
 end
 
 puts "After seeding the database: "
