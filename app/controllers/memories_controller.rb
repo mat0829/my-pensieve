@@ -11,13 +11,13 @@ class MemoriesController < ApplicationController
 
   def new
     @memory = current_user.memories.new
-    @emotions = current_user.emotions
-    @players = current_user.players
+    @emotions = current_user.emotions.alphabetized
+    @players = current_user.players.alphabetized
   end
 
   def edit
-    @emotions = current_user.emotions
-    @players = current_user.players
+    @emotions = current_user.emotions.alphabetized
+    @players = current_user.players.alphabetized
   end
 
   def create
