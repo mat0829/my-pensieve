@@ -2,7 +2,7 @@
 
 <%= form_for @player do |f| %>
   <h3><%= f.label :name, "Name of Person/Pet: " %> <%= f.text_field :name, 
-                   style: 'text-transform: capitalize;' %></h3><br><br>
+                  :autocomplete => :off, style: 'text-transform: capitalize;' %></h3><br><br>
   
   <%= f.submit "Bottle Your Person/Pet" %>
 <% end %><br>
