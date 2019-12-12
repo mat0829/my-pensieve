@@ -2,16 +2,26 @@
   <% if logged_in? %>
 
     <% if current_user.image.present? %>
-      <h1>Welcome, <%= image_tag(current_user.image) %> <%= render 'users/current_user' %>!</h1><br>
+      <h1>Welcome, <%= image_tag(current_user.image) %> <%= render 'users/current_user' %>!</h1>
     <% else %>
-      <h1>Welcome, <%= render 'users/current_user' %>!</h1><br>
+      <h1>Welcome, <%= render 'users/current_user' %>!</h1>
     <% end %><br>
+
+    <center>
+      <h3>You currently have:</h3>
+      <h2><li><%= current_user.memories_count %> Memories,
+      <%= current_user.emotions_count %> Emotions,
+      and <%= current_user.players_count %> People/Pets</li>
+      </h2>
+    </center><br>
     
-    <%= link_to 'Add Memory', new_memory_path %> |
-    <%= link_to 'Memories Page', memories_path %> |
-    <%= link_to 'Emotions Page', emotions_path %> |
-    <%= link_to 'People/Pets Page', players_path %> |
-    <%= link_to 'Log Out', logout_path %>
+    <center>
+      <%= link_to 'Add a Memory', new_memory_path %> |
+      <%= link_to 'Memories Page', memories_path %> |
+      <%= link_to 'Emotions Page', emotions_path %> |
+      <%= link_to 'People/Pets Page', players_path %> |
+      <%= link_to 'Log Out', logout_path %>
+    </center>
     
   <% else %>
 
@@ -19,5 +29,6 @@
     <%= link_to 'Sign Up', new_user_path %> |
     <%= link_to 'Log In', login_path %> |
     <%= link_to('Log in with Facebook!', '/auth/facebook') %>
-  <%end %>
+    
+  <% end %>
 </nav>

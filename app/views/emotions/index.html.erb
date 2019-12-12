@@ -1,4 +1,4 @@
-<h1><%= current_user.username %>'s <%= current_user.emotions_count %> Memory Emotions:</h1><br>
+<h1><%= current_user.username %>'s Emotions:</h1><br>
 
 <% @emotions.each do |emotion| %>
   <h3>"<%= emotion.name %>" <%= link_to 'View Memories', emotion_path(emotion) %></h3><br>
