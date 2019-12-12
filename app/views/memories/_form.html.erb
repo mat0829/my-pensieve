@@ -11,11 +11,13 @@
   <% if !@emotions.blank? %>
 
     <h3>Choose an Emotion(s):</h3><br>
-    <%= f.collection_check_boxes(:emotion_ids, @emotions.all.uniq, :id, :name_capitalized) do |b| %>
-      <li>
-        <%= b.label { b.check_box + " " + b.object.name_capitalized } %>
-      </li>
-    <% end %><br>
+    <div class="form-3-col">
+      <%= f.collection_check_boxes(:emotion_ids, @emotions.all.uniq, :id, :name_capitalized) do |b| %>
+          <li>
+            <%= b.label { b.check_box + " " + b.object.name_capitalized } %>
+          </li>
+      <% end %>
+    </div><br>
 
     <%= f.fields_for :emotions, @memory.emotions.build do |emotions_fields| %>
       <h4><%= emotions_fields.label :name, "Create a New Emotion:" %> <%= emotions_fields.text_field :name, 
@@ -35,11 +37,14 @@
   <% if !@players.blank? %>
 
     <h3>Choose a Person/Pet(s):</h3><br>
-    <%= f.collection_check_boxes(:player_ids, @players.all.uniq, :id, :name_capitalized_and_split) do |b| %>
-      <li>
-      <%= b.label { b.check_box + " " + b.object.name_capitalized_and_split } %>
-      </li>
-    <% end %><br>
+    <div class="form-3-col">
+      <%= f.collection_check_boxes(:player_ids, @players.all.uniq, :id, :name_capitalized_and_split) do |b| %>
+        <li>
+          <%= b.label { b.check_box + " " + b.object.name_capitalized_and_split } %>
+        </li>
+      <% end %>
+    </div><br>
+
 
     <%= f.fields_for :players, @memory.players.build do |players_fields| %>
       <h4><%= players_fields.label :name, "Add a New Person/Pet: " %><%= players_fields.text_field :name, 
