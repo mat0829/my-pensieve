@@ -6,7 +6,7 @@ class Emotion < ApplicationRecord
 
   scope :alphabetized, -> { order(:name)}
 
-  def name_capitalized
-    name.capitalize
+  def name=(s)
+    write_attribute(:name, s.to_s.titleize)
   end
 end

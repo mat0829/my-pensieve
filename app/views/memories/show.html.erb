@@ -1,18 +1,18 @@
 <%= render 'show_background' %>
 
 <ul>
-  <h1>"<%= @memory.title_capitalized_and_split %>"</h1><br>
+  <h1>"<%= @memory.title %>"</h1><br>
   <p><%= simple_format(@memory.content) %></p>
 </ul>
 
 <h3>Emotions:</h3><br>
 <% @memory.emotions.each do |emotion| %>
-  <li><%= link_to emotion.name_capitalized, emotion_path(emotion) %></li><br>
+  <li><%= link_to emotion.name, emotion_path(emotion) %></li><br>
 <% end %>
 
 <h3>People/Pets:</h3><br>
 <% @memory.players.each do |player| %>
-  <li><%= link_to player.name_capitalized_and_split, player_path(player) %></li><br>
+  <li><%= link_to player.name, player_path(player) %></li><br>
 <% end %><br>
 
 <%= button_to "Add Another Memory", new_memory_path %><br>

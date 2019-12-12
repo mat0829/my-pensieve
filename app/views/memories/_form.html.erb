@@ -13,9 +13,9 @@
 
     <h3>Choose an Emotion(s):</h3><br>
     <div class="form-3-col">
-      <%= f.collection_check_boxes(:emotion_ids, @emotions.all.uniq, :id, :name_capitalized) do |b| %>
+      <%= f.collection_check_boxes(:emotion_ids, @emotions.all.uniq, :id, :name) do |b| %>
           <li>
-            <%= b.label { b.check_box + " " + b.object.name_capitalized } %>
+            <%= b.label { b.check_box + " " + b.object.name } %>
           </li>
       <% end %>
     </div><br>
@@ -39,9 +39,9 @@
 
     <h3>Choose a Person/Pet(s):</h3><br>
     <div class="form-3-col">
-      <%= f.collection_check_boxes(:player_ids, @players.all.uniq, :id, :name_capitalized_and_split) do |b| %>
+      <%= f.collection_check_boxes(:player_ids, @players.all.uniq, :id, :name) do |b| %>
         <li>
-          <%= b.label { b.check_box + " " + b.object.name_capitalized_and_split } %>
+          <%= b.label { b.check_box + " " + b.object.name } %>
         </li>
       <% end %>
     </div><br>

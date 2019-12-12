@@ -6,7 +6,7 @@ class Player < ApplicationRecord
 
   scope :alphabetized, -> { order(:name)}
 
-  def name_capitalized_and_split
-    name.split.map(&:capitalize).join(' ')
+  def name=(s)
+    write_attribute(:name, s.to_s.titleize)
   end
 end

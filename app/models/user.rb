@@ -8,10 +8,6 @@ class User < ApplicationRecord
     has_many :emotions, through: :memories
     has_many :players, through: :memories
 
-    def username_capitalized_and_split
-      username.split.map(&:capitalize).join(' ')
-    end
-
     def memories_count
       memories.count
     end

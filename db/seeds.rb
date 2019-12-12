@@ -15,9 +15,9 @@ emotions = Emotion.create!([{ name: 'joy'}, { name: 'trust' }, { name: 'fear' },
   )
 
   players = Player.create!([
-    {name:     Faker::Movies::HarryPotter.unique.character.sub(/^[A-Z]/, &:downcase)},
-    {name:     Faker::Movies::HarryPotter.unique.character.sub(/^[A-Z]/, &:downcase)},
-    {name:     Faker::Movies::HarryPotter.unique.character.sub(/^[A-Z]/, &:downcase)}
+    {name:     Faker::Movies::HarryPotter.unique.character},
+    {name:     Faker::Movies::HarryPotter.unique.character},
+    {name:     Faker::Movies::HarryPotter.unique.character}
   ])
 
   memory.emotions << emotions.pop
