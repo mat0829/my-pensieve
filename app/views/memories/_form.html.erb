@@ -5,7 +5,7 @@
   <%= render 'errors' %>
 
   <h3><%= f.label :title %> <%= f.text_field :title, :autocomplete => :off, 
-  style: 'text-transform: capitalize;' %></h3><br>
+                   style: 'text-transform: capitalize;' %></h3><br>
 
   <%= f.text_area :content, cols: "38", rows: "10", placeholder: "Enter Content here: "%><br><br>
 
@@ -22,7 +22,7 @@
 
     <%= f.fields_for :emotions, @memory.emotions.build do |emotions_fields| %>
       <h4><%= emotions_fields.label :name, "Create a New Emotion:" %> <%= emotions_fields.text_field :name, 
-      :autocomplete => :off, style: 'text-transform: capitalize;' %></h4><br>
+                                    :autocomplete => :off, style: 'text-transform: capitalize;' %></h4><br>
     <% end %><br>
 
   <% else %>
@@ -31,8 +31,9 @@
     
     <%= f.fields_for :emotions, @memory.emotions.build do |emotions_fields| %>
       <h4><%= emotions_fields.label :name, "Create a New Emotion:" %> <%= emotions_fields.text_field :name, 
-      :autocomplete => :off, style: 'text-transform: capitalize;' %></h4><br>
+                                    :autocomplete => :off, style: 'text-transform: capitalize;' %></h4><br>
     <% end %>
+
   <% end %>
 
   <% if !@players.blank? %>
@@ -49,7 +50,7 @@
 
     <%= f.fields_for :players, @memory.players.build do |players_fields| %>
       <h4><%= players_fields.label :name, "Add a New Person/Pet: " %><%= players_fields.text_field :name, 
-      :autocomplete => :off, style: 'text-transform: capitalize;' %></h4><br>
+                                   :autocomplete => :off, style: 'text-transform: capitalize;' %></h4><br>
     <% end %><br>
 
   <% else %>
@@ -58,7 +59,7 @@
     
     <%= f.fields_for :players, @memory.players.build do |players_fields| %>
       <h4><%= players_fields.label :name, "Add a New Person/Pet: " %> <%= players_fields.text_field :name, 
-      :autocomplete => :off, style: 'text-transform: capitalize;' %></h4><br>
+                                   :autocomplete => :off, style: 'text-transform: capitalize;' %></h4><br>
     <% end %>
   <% end %>
 

@@ -2,11 +2,11 @@
 
 <%= form_for @user, :url => url_for(:controller => 'sessions', :action => 'create') do |f| %>
   
-    <%= f.text_field :username, :autocomplete => :off, placeholder: 'Username:' %><br><br>
+  <%= f.text_field :username, :autocomplete => :off, placeholder: 'Username:' %><br><br>
   
-    <%= f.password_field :password, placeholder: 'Password:' %>
+  <%= f.password_field :password, placeholder: 'Password:' %>
   
-    <%= f.submit "Log In" %><br>
+  <%= f.submit "Log In" %><br>
 <% end %><br> or <%= link_to('Log in with Facebook!', '/auth/facebook') %><br><br>
 
 <%= button_to "Create a New User", new_user_path, :method => "get" %>

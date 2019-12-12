@@ -1,9 +1,12 @@
 <h1><%= @emotion.name %> Memories:</h1><br>
+<ul>
   <% @emotion.memories.each do |memory| %>
     <li><%= link_to memory.title, memory_path(memory) %></li><br>
   <% end %><br>
+</ul>
 
-<%= button_to "Delete Your Emotion", emotion_path(@emotion), method: :delete, data: { confirm: "Are you sure you want to delete your Emotion?" }, class: 'delete-button' %><br>
+<%= button_to "Delete Your Emotion", emotion_path(@emotion), method: :delete, 
+               data: { confirm: "Are you sure you want to delete your Emotion?" }, class: 'delete-button' %><br>
 
 <%= button_to "Edit Your Emotion", edit_emotion_path(@emotion), :method => "get" %><br>
   
