@@ -4,7 +4,8 @@
   
   <%= render 'errors' %>
 
-  <h3><%= f.label :title %> <%= f.text_field :title, :autocomplete => :off %></h3><br>
+  <h3><%= f.label :title %> <%= f.text_field :title, :autocomplete => :off, 
+  style: 'text-transform: capitalize;' %></h3><br>
 
   <%= f.text_area :content, cols: "38", rows: "10", placeholder: "Enter Content here: "%><br><br>
 

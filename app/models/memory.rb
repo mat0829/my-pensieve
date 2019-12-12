@@ -8,6 +8,11 @@ class Memory < ApplicationRecord
   has_many :players, through: :memory_players, dependent: :destroy
 
   scope :alphabetized, -> { order(:title)}
+  scope :capitalize, -> {}
+
+  def title=(s)
+    write_attribute(:title, s.to_s.titleize)
+  end
 
   def title_capitalized_and_split
     title.split.map(&:capitalize).join(' ')
