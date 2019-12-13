@@ -1,7 +1,7 @@
 <%= render 'show_background' %>
 
 <h1>"<%= @memory.title %>"</h1><br>
-<p><%= simple_format(@memory.content) %></p>
+<p><%= @memory.content.gsub(/([a-z])((?:[^.?!]|\.(?=[a-z]))*)/i) { $1.upcase + $2.rstrip } %></p>
 
 <h3>Emotions:</h3><br>
 <ul>

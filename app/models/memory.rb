@@ -1,6 +1,7 @@
 class Memory < ApplicationRecord
   belongs_to :user
   validates :title, :content, presence: true
+  validates :title, uniqueness: true
 
   has_many :memory_emotions
   has_many :emotions, through: :memory_emotions, dependent: :destroy
@@ -8,18 +9,9 @@ class Memory < ApplicationRecord
   has_many :players, through: :memory_players, dependent: :destroy
 
   scope :alphabetized, -> { order(:title)}
-  scope :capitalize, -> {}
 
   def title=(s)
     write_attribute(:title, s.to_s.titleize)
-  end
-
-  def title_capitalized_and_split
-    title.split.map(&:capitalize).join(' ')
-  end
-
-  def content_capitalized
-    content.capitalize
   end
 
   def emotions_attributes=(emotion_attributes)
