@@ -1,4 +1,3 @@
-
 emotions = Emotion.create!([{ name: 'joy'}, { name: 'trust' }, { name: 'fear' }, { name: 'surprise' }, 
   { name: 'sadness' }, { name: 'disgust' }, { name: 'anger' }, { name: 'anticipation' }, 
   { name: 'love' }, { name: 'remorse' }])
