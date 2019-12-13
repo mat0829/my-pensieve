@@ -1,4 +1,4 @@
-<h1><%= @player.name %> Memories:</h1><br>
+<h1>Memories with <%= @player.name %>:</h1><br>
   <ul>
     <% @player.memories.each do |memory| %>
       <li><%= link_to memory.title, memory_path(memory) %></li><br>
