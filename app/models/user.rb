@@ -8,6 +8,10 @@ class User < ApplicationRecord
     has_many :emotions, through: :memories
     has_many :players, through: :memories
 
+    def username=(s)
+      write_attribute(:username, s.to_s.titleize)
+    end
+
     def memories_count
       memories.count
     end
