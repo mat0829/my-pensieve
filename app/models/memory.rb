@@ -3,10 +3,10 @@ class Memory < ApplicationRecord
   validates :title, :content, presence: true
   validates :title, uniqueness: true
 
-  has_many :memory_emotions
-  has_many :emotions, through: :memory_emotions, dependent: :destroy
-  has_many :memory_players
-  has_many :players, through: :memory_players, dependent: :destroy
+  has_many :memory_emotions, dependent: :destroy
+  has_many :emotions, through: :memory_emotions
+  has_many :memory_players, dependent: :destroy
+  has_many :players, through: :memory_players
 
   scope :alphabetized, -> { order(:title)}
 
