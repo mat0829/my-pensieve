@@ -116,7 +116,7 @@ GEM
     multi_xml (0.6.0)
     multipart-post (2.1.1)
     nio4r (2.5.2)
-    nokogiri (1.10.5)
+    nokogiri (1.10.9)
       mini_portile2 (~> 2.4.0)
     oauth2 (1.4.2)
       faraday (>= 0.8, < 2.0)
@@ -134,8 +134,8 @@ GEM
       omniauth (~> 1.9)
     pg (1.2.3)
     public_suffix (4.0.1)
-    puma (3.12.1)
-    rack (2.0.7)
+    puma (3.12.6)
+    rack (2.0.8)
     rack-proxy (0.6.5)
       rack
     rack-test (1.1.0)
@@ -221,7 +221,7 @@ GEM
       railties (>= 4.2)
     websocket-driver (0.7.1)
       websocket-extensions (>= 0.1.0)
-    websocket-extensions (0.1.4)
+    websocket-extensions (0.1.5)
     xpath (3.2.0)
       nokogiri (~> 1.8)
     zeitwerk (2.2.1)
@@ -241,8 +241,12 @@ DEPENDENCIES
   listen (>= 3.0.5, < 3.2)
   omniauth
   omniauth-facebook
+<<<<<<< HEAD
   pg
   puma (~> 3.11)
+=======
+  puma (~> 3.12)
+>>>>>>> ba0dc346d247bb06c19ccb62a6fd365cca3139d8
   rails (~> 6.0.0)
   sass-rails (~> 5)
   seed_dump
