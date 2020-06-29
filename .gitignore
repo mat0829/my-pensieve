@@ -36,3 +36,5 @@ yarn-debug.log*
 
 # Ignore facebook credentials
 .env
+# Ignore application configuration
+/config/application.yml
